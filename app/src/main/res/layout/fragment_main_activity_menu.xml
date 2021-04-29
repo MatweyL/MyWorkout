@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/menu_background_gradient"
     tools:context=".MainActivityMenu">
 
     <androidx.constraintlayout.widget.Guideline
@@ -25,73 +26,50 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo2" />
+        />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_train"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+
         android:text="Тренироваться!"
-        android:textSize="@dimen/button_menu_size"
-        android:textStyle="bold"
-        app:backgroundTint="@color/button_yellow1"
+        style="@style/menuTextStyle"
+        android:background="@drawable/menu_buttons_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_trains_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Список тренировок"
-        android:textSize="@dimen/button_menu_size"
-        android:textStyle="bold"
-        app:backgroundTint="@color/button_yellow1"
+        style="@style/menuTextStyle"
+        android:background="@drawable/menu_buttons_style"
+        android:text="@string/Trains_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_train" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_create_train"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:shadowColor="#020202"
-        android:shadowDx="-2"
-        android:shadowRadius="5"
-        android:text="Создать тренировку"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/button_yellow1"
+        android:text="@string/Create_Train"
+        style="@style/menuTextStyle"
+        android:background="@drawable/menu_buttons_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_trains_list" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:background="@drawable/menu_buttons_style"
+        style="@style/menuTextStyle"
         android:id="@+id/button_show_exercises_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Список упражнений"
-        android:textSize="@dimen/button_menu_size"
-        android:textStyle="bold"
-        app:backgroundTint="@color/button_yellow1"
+        android:text="@string/Exercises_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_create_train" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Some button"
-        android:textSize="@dimen/button_menu_size"
-        android:textStyle="bold"
-        app:backgroundTint="@color/button_yellow1"
+        android:background="@drawable/menu_buttons_style"
+        style="@style/menuTextStyle"
+        android:text="@string/some_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_show_exercises_list" />

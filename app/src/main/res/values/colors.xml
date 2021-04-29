@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow1">#F1E39D</color>
     <color name="button_yellow1">#FFEB3B</color>
+    <color name="light_yellow1">#FFF064</color>
+    <color name="main_background1">#1B1B1C</color>
+    <color name="main_background2">#6D6D70</color>
+    <color name="main_background3">#9E9EA1</color>
 </resources>
