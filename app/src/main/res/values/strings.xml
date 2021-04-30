@@ -6,4 +6,5 @@
     <string name="Exercises_list">Список упражнений</string>
     <string name="Create_Train">Создать тренировку</string>
     <string name="Trains_list">Список тренировок</string>
+    <string name="add_exercise">add_exercise</string>
 </resources>

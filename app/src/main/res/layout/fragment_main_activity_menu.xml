@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.25"
+        app:layout_constraintGuide_percent="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,9 +67,11 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button6"
-        android:background="@drawable/menu_buttons_style"
         style="@style/menuTextStyle"
+        android:layout_marginBottom="152dp"
+        android:background="@drawable/menu_buttons_style"
         android:text="@string/some_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_show_exercises_list" />
