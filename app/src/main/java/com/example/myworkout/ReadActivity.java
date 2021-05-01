@@ -53,9 +53,12 @@ public class ReadActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intentItem = new Intent(ReadActivity.this, Description_activity.class);
+
+                        String k =image_list.get(position);
+                        intentItem.putExtra("image",k);
                         String p =description_list.get(position);
                         intentItem.putExtra("description",p);
-                        intentItem.putExtra("image",p);
+
                         startActivity(intentItem);
                     }
                 });

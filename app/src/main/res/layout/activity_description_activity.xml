@@ -16,14 +16,14 @@
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="match_parent"
             tools:ignore="contentDescription" />
 
         <TextView
             android:id="@+id/description_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="300dp"
+            android:paddingTop="0dp"
             android:textColor="#000000"
             android:textSize="30sp" />
 
