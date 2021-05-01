@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/menu_background_gradient"
-    tools:context=".MainActivityMenu">
+    tools:context=".CreateTrain">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_exercises"
@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteY="336dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_button_add"
+        android:id="@+id/add_exercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
