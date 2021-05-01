@@ -23,7 +23,7 @@ import java.util.List;
 public class ReadActivity extends AppCompatActivity {
     ListView listView;
     DatabaseReference databaseReference;
-    List<String> title_list, description_list;
+    List<String> title_list, description_list,image_list;
     ArrayAdapter<String>  arrayAdapter;
     Exercise exercise1;
     @Override
@@ -34,6 +34,7 @@ public class ReadActivity extends AppCompatActivity {
         databaseReference= FirebaseDatabase.getInstance().getReference("exercises");
         exercise1 = new Exercise();
         title_list = new ArrayList<>();
+        image_list = new ArrayList<>();
         description_list = new ArrayList<>();
         arrayAdapter = new ArrayAdapter<>(this,R.layout.item_layout, R.id.item, title_list);
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -44,6 +45,7 @@ public class ReadActivity extends AppCompatActivity {
                     exercise1 = a.getValue(Exercise.class);
                     title_list.add(exercise1.getTitle());
                     description_list.add(exercise1.getDescription());
+                    image_list.add(exercise1.getImage());
                 }
                 listView.setAdapter(arrayAdapter);
 
@@ -53,6 +55,7 @@ public class ReadActivity extends AppCompatActivity {
                         Intent intentItem = new Intent(ReadActivity.this, Description_activity.class);
                         String p =description_list.get(position);
                         intentItem.putExtra("description",p);
+                        intentItem.putExtra("image",p);
                         startActivity(intentItem);
                     }
                 });

@@ -1,14 +1,23 @@
 package com.example.myworkout;
 
 public class Exercise {
-    private String title,description;
+    private String image,title,description;
 
     public Exercise() {
     }
 
-    public Exercise(String title, String description) {
+    public Exercise(String image, String title, String description) {
+        this.image = image;
         this.title = title;
         this.description = description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getTitle() {
