@@ -15,4 +15,7 @@
         <item name="android:layout_marginEnd">@dimen/button_menu_margin</item>
         <item name="android:layout_marginRight">@dimen/button_menu_margin</item>
     </style>
+    <style name="splashTheme" parent="menuTextStyle">
+        <item name="android:windowBackground">@drawable/logo</item>
+    </style>
 </resources>
