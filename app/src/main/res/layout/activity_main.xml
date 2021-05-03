@@ -70,7 +70,7 @@
         style="@style/menuTextStyle"
         android:layout_marginBottom="152dp"
         android:background="@drawable/menu_buttons_style"
-        android:text="@string/some_button"
+        android:text="@string/Eat_Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
