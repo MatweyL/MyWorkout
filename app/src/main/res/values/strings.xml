@@ -2,9 +2,12 @@
     <string name="app_name">MyWorkout</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="some_button">Some button</string>
+    <string name="Eat_Button">Калорийность продуктов</string>
     <string name="Exercises_list">Список упражнений</string>
     <string name="Create_Train">Создать тренировку</string>
     <string name="Trains_list">Список тренировок</string>
     <string name="add_exercise">add_exercise</string>
+    <string name="first_line">Название:</string>
+    <string name="second_line">Белки/Жиры/Углеводы на 100 г.</string>
+    <string name="third_line">Калорийность</string>
 </resources>
