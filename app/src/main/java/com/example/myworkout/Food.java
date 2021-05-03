@@ -3,16 +3,9 @@ package com.example.myworkout;
 import android.widget.ImageView;
 
 public class Food {
-    String title,characteristic,calories, urlFood;
+    String title, urlFood;
+    double protein,fats, carbohydrates,calories;
     ImageView imageView2;
-
-    public ImageView getImageView2() {
-        return imageView2;
-    }
-
-    public void setImageView2(ImageView imageView2) {
-        this.imageView2 = imageView2;
-    }
 
     public String getTitle() {
         return title;
@@ -22,27 +15,51 @@ public class Food {
         this.title = title;
     }
 
-    public String getCharacteristic() {
-        return characteristic;
-    }
-
-    public void setCharacteristic(String characteristic) {
-        this.characteristic = characteristic;
-    }
-
-    public String getCalories() {
-        return calories;
-    }
-
-    public void setCalories(String calories) {
-        this.calories = calories;
-    }
-
     public String getUrlFood() {
         return urlFood;
     }
 
     public void setUrlFood(String urlFood) {
         this.urlFood = urlFood;
+    }
+
+    public double getProtein() {
+        return protein;
+    }
+
+    public void setProtein(double protein) {
+        this.protein = protein;
+    }
+
+    public double getFats() {
+        return fats;
+    }
+
+    public void setFats(double fats) {
+        this.fats = fats;
+    }
+
+    public double getCarbohydrates() {
+        return carbohydrates;
+    }
+
+    public void setCarbohydrates(double carbohydrates) {
+        this.carbohydrates = carbohydrates;
+    }
+
+    public double getCalories() {
+        return calories;
+    }
+
+    public void setCalories(double calories) {
+        this.calories = calories;
+    }
+
+    public ImageView getImageView2() {
+        return imageView2;
+    }
+
+    public void setImageView2(ImageView imageView2) {
+        this.imageView2 = imageView2;
     }
 }

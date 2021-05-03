@@ -8,6 +8,8 @@
     <string name="Trains_list">Список тренировок</string>
     <string name="add_exercise">add_exercise</string>
     <string name="first_line">Название:</string>
-    <string name="second_line">Белки/Жиры/Углеводы на 100 г.</string>
-    <string name="third_line">Калорийность</string>
+    <string name="second_line">Белки на 100 г.</string>
+    <string name="third_line">Жиры на 100 г.</string>
+    <string name="fourth_line">Углеводы на 100 г.</string>
+    <string name="fifth_line">Калорийность</string>
 </resources>

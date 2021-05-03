@@ -36,8 +36,10 @@ public class FoodMyAdapter extends RecyclerView.Adapter<FoodMyAdapter.MyViewHold
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Food food = list.get(position);
         holder.title.setText(food.getTitle());
-        holder.characteristic.setText(food.getCharacteristic());
-        holder.calories.setText(food.getCalories());
+        holder.protein.setText(Double.toString(food.getProtein()));
+        holder.fats.setText(Double.toString(food.getFats()));
+        holder.carbohydrates.setText(Double.toString(food.getCarbohydrates()));
+        holder.calories.setText(Double.toString(food.getCalories()));
         //holder.urlFood.setText(food.getUrlFood());
 
         String imageURL=null;
@@ -54,12 +56,14 @@ public class FoodMyAdapter extends RecyclerView.Adapter<FoodMyAdapter.MyViewHold
 
     public static class MyViewHolder extends  RecyclerView.ViewHolder {
 
-        TextView title,characteristic,calories, urlFood;
+        TextView title,protein,fats, carbohydrates,calories, urlFood;
         ImageView imageView;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.tvTitle);
-            characteristic= itemView.findViewById(R.id.tvBelki);
+            protein= itemView.findViewById(R.id.tvProtein);
+            fats=itemView.findViewById(R.id.tvFats);
+            carbohydrates=itemView.findViewById(R.id.tvСarbohydrates);
             calories =itemView.findViewById(R.id.tvCalory);
             //urlFood = itemView.findViewById(R.id.imageFood);
             imageView=itemView.findViewById(R.id.imageFood);
