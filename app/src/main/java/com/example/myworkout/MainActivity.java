@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
     private Button bTrain, bCreateTrain, bSeeTrains, bSeeExercises, bSome,bLogout;
     private FirebaseUser firebaseUser;
-    private DatabaseReference databaseReference;
+    private DatabaseReference databaseReference,databaseReference1;
     private String userIdDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,19 +66,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+        databaseReference1 = FirebaseDatabase.getInstance().getReference("Users");
         userIdDB=firebaseUser.getUid();
 
         final TextView greetingTV=findViewById(R.id.textViewGreeting);
 
-        databaseReference.child(userIdDB).addValueEventListener(new ValueEventListener() {
+        databaseReference1.child(userIdDB).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserAuth userAuth=snapshot.getValue(UserAuth.class);
                 if(userAuth!=null){
                     String names = userAuth.name;
                     String login = userAuth.login;
-                    greetingTV.setText("Hello, "+ names+ " Удачной тренировки!");
+                    greetingTV.setText("Привет, "+ names+ " Удачной тренировки!");
                 }
             }
 
