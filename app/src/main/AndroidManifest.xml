@@ -11,21 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWorkout">
-        <activity android:name=".ResetPassword"></activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".FoodActivity" />
-        <activity android:name=".Description_activity" />
-        <activity android:name=".CreateTrain" />
-        <activity android:name=".LogotypeActivity">
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/splashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".Description_activity" />
+        <activity android:name=".CreateTrain" />
+        <activity android:name=".MainActivity">
+
         </activity>
         <activity android:name=".ReadActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".AuthorizationActivity" />
     </application>
 
 </manifest>
