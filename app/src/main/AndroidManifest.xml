@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWorkout">
-        <activity android:name=".FoodActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".FoodActivity" />
         <activity android:name=".Description_activity" />
         <activity android:name=".CreateTrain" />
         <activity android:name=".LogotypeActivity">
@@ -23,6 +24,7 @@
         </activity>
         <activity android:name=".ReadActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".AuthorizationActivity" />
     </application>
 
 </manifest>

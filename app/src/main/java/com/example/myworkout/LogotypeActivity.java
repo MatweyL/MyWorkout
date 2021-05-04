@@ -17,7 +17,7 @@ public class LogotypeActivity extends Activity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(LogotypeActivity.this,MainActivity.class);
+                Intent intent = new Intent(LogotypeActivity.this,AuthorizationActivity.class);
                 startActivity(intent);
                 finish();
             }

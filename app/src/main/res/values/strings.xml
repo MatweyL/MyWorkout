@@ -12,4 +12,11 @@
     <string name="third_line">Жиры на 100 г.</string>
     <string name="fourth_line">Углеводы на 100 г.</string>
     <string name="fifth_line">Калорийность</string>
+    <string name="au_login">Login</string>
+    <string name="au_password">Password</string>
+    <string name="au_button">Sign in</string>
+    <string name="au_forget">Forget a password?</string>
+    <string name="au_register">Register</string>
+    <string name="au_title">My Workout</string>
+    <string name="au_name">Name</string>
 </resources>
