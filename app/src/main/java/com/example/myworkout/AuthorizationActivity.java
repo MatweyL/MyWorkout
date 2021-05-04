@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class AuthorizationActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tvRegister;
@@ -83,8 +84,16 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+                    FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+                    if (firebaseUser.isEmailVerified())
+                    {
                     Toast.makeText(AuthorizationActivity.this,"Success",Toast.LENGTH_LONG).show();
                     startActivity(new Intent(AuthorizationActivity.this,MainActivity.class));
+                    }
+                    else{
+                        firebaseUser.sendEmailVerification();
+                        Toast.makeText(AuthorizationActivity.this,"Check email to verify",Toast.LENGTH_LONG).show();
+                    }
                 }
                 else{
                     Toast.makeText(AuthorizationActivity.this,"Check your data",Toast.LENGTH_LONG).show();
