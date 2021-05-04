@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvTitleAu"
+        android:id="@+id/tvTitleRP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -34,10 +34,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.435"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleAu" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleRP" />
 
     <EditText
-        android:id="@+id/AuEditTextPassword"
+        android:id="@+id/RPEditTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/AuEditTextLogin" />
 
     <Button
-        android:id="@+id/AuRegButton"
+        android:id="@+id/RPRegButton"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
@@ -59,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AuEditTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/RPEditTextPassword" />
 
     <TextView
         android:id="@+id/Au_textView1"
@@ -72,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.374"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AuRegButton" />
+        app:layout_constraintTop_toBottomOf="@+id/RPRegButton" />
 
     <TextView
         android:id="@+id/Au_textView2"

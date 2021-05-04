@@ -7,7 +7,7 @@
     tools:context=".RegisterActivity">
 
     <TextView
-        android:id="@+id/tvTitleAu"
+        android:id="@+id/tvTitleRP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="105dp"
@@ -31,10 +31,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleAu" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleRP" />
 
     <EditText
-        android:id="@+id/AuEditTextPassword"
+        android:id="@+id/RPEditTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/AuEditTextLogin" />
 
     <Button
-        android:id="@+id/AuRegButton"
+        android:id="@+id/RPRegButton"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -53,7 +53,7 @@
         app:backgroundTint="#E18641"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AuEditTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/RPEditTextPassword" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"

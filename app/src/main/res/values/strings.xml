@@ -6,6 +6,9 @@
     <string name="Exercises_list">Список упражнений</string>
     <string name="Create_Train">Создать тренировку</string>
     <string name="Trains_list">Список тренировок</string>
+    <string name="Logout">Выйти</string>
+    <string name="Hello">Привет, </string>
+    <string name="Reset_Password">Сбросить пароль </string>
     <string name="add_exercise">add_exercise</string>
     <string name="first_line">Название:</string>
     <string name="second_line">Белки на 100 г.</string>

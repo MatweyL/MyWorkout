@@ -31,24 +31,24 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_register);
         firebaseAuth=FirebaseAuth.getInstance();
 
-        title=findViewById(R.id.tvTitleAu);
+        title=findViewById(R.id.tvTitleRP);
         title.setOnClickListener(this);
-        buttonReg=findViewById(R.id.AuRegButton);
+        buttonReg=findViewById(R.id.RPRegButton);
         buttonReg.setOnClickListener(this);
 
         editTextName=findViewById(R.id.editTextTextPersonName);
         editTextLogin=findViewById(R.id.AuEditTextLogin);
-        editTextPassword=findViewById(R.id.AuEditTextPassword);
+        editTextPassword=findViewById(R.id.RPEditTextPassword);
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.tvTitleAu:
+            case R.id.tvTitleRP:
                 startActivity(new Intent(this,AuthorizationActivity.class));
                 break;
-            case R.id.AuRegButton:
+            case R.id.RPRegButton:
                 buttonReg();
                 break;
 

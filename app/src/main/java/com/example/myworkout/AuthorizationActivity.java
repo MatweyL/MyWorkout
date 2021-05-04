@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class AuthorizationActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView tvRegister;
+    private TextView tvRegister, tvReset;
     private EditText editTextLA,editTextPA;
     private Button buttonSigIn;
     private FirebaseAuth firebaseAuth;
@@ -33,10 +33,12 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.authorization_layout);
         tvRegister = findViewById(R.id.Au_textView2);
         tvRegister.setOnClickListener(this);
-        buttonSigIn = findViewById(R.id.AuRegButton);
+        tvReset=findViewById(R.id.Au_textView1);
+        tvReset.setOnClickListener(this);
+        buttonSigIn = findViewById(R.id.RPRegButton);
         buttonSigIn.setOnClickListener(this);
         editTextLA=findViewById(R.id.AuEditTextLogin);
-        editTextPA=findViewById(R.id.AuEditTextPassword);
+        editTextPA=findViewById(R.id.RPEditTextPassword);
         progressBar = findViewById(R.id.progressBar);
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -48,8 +50,11 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
             case R.id.Au_textView2:
                 startActivity(new Intent(this,RegisterActivity.class));
                 break;
-            case R.id.AuRegButton:
+            case R.id.RPRegButton:
                 buttonSigIn();
+                break;
+            case R.id.Au_textView1:
+                startActivity(new Intent(this, ResetPassword.class));
                 break;
         }
     }
