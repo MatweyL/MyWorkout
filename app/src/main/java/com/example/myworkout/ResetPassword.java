@@ -40,13 +40,13 @@ public class ResetPassword extends AppCompatActivity {
     private void buttonReset() {
         String login = emailET.getText().toString().trim();
         if (login.isEmpty()){
-            emailET.setError("Login is required");
+            emailET.setError("Введите логин");
             emailET.requestFocus();
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(login).matches()){
-            emailET.setError("Provide valid login(email)");
+            emailET.setError("Введите корректный логин");
             emailET.requestFocus();
             return;
         }
@@ -55,9 +55,9 @@ public class ResetPassword extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(ResetPassword.this,"Check email", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ResetPassword.this,"Проверьте вашу почту", Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(ResetPassword.this,"Try again",Toast.LENGTH_LONG).show();
+                    Toast.makeText(ResetPassword.this,"Попробуйте снова",Toast.LENGTH_LONG).show();
 
                 }
             }

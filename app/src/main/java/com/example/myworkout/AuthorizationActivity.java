@@ -64,23 +64,23 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
         String password = editTextPA.getText().toString().trim();
 
         if (login.isEmpty()){
-            editTextLA.setError("Login is required");
+            editTextLA.setError("Введите логин");
             editTextLA.requestFocus();
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(login).matches()){
-            editTextLA.setError("Provide valid login(email)");
+            editTextLA.setError("Введите корректный логин");
             editTextLA.requestFocus();
             return;
         }
         if (password.isEmpty()){
-            editTextPA.setError("Password is required");
+            editTextPA.setError("Введите пароль");
             editTextPA.requestFocus();
             return;
         }
         if (password.length()<8){
-            editTextPA.setError("Min length password should be 8 symphols");
+            editTextPA.setError("Минимальная длина 8 символов");
             editTextPA.requestFocus();
             return;
         }
@@ -92,17 +92,18 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
                     FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
                     if (firebaseUser.isEmailVerified())
                     {
-                    Toast.makeText(AuthorizationActivity.this,"Success",Toast.LENGTH_LONG).show();
+                    Toast.makeText(AuthorizationActivity.this,"Успех",Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.VISIBLE);
                     startActivity(new Intent(AuthorizationActivity.this,MainActivity.class));
                     }
                     else{
                         firebaseUser.sendEmailVerification();
-                        Toast.makeText(AuthorizationActivity.this,"Check email to verify",Toast.LENGTH_LONG).show();
+                        Toast.makeText(AuthorizationActivity.this,"Проверьте почту для подтверждения",Toast.LENGTH_LONG).show();
                     }
                 }
                 else{
-                    Toast.makeText(AuthorizationActivity.this,"Check your data",Toast.LENGTH_LONG).show();
-
+                    Toast.makeText(AuthorizationActivity.this,"Проверьте введенные данные",Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
                 }
             }
         });

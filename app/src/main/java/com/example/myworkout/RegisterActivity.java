@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private EditText  editTextName, editTextLogin,editTextPassword;
     private FirebaseAuth firebaseAuth;
     private Button buttonReg;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         editTextName=findViewById(R.id.editTextTextPersonName);
         editTextLogin=findViewById(R.id.AuEditTextLogin);
         editTextPassword=findViewById(R.id.RPEditTextPassword);
+
+        progressBar=findViewById(R.id.progressBar3);
 
     }
 
@@ -60,32 +64,32 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String password = editTextPassword.getText().toString().trim();
 
         if (name.isEmpty()){
-            editTextName.setError("Name is required");
+            editTextName.setError("Введите имя");
             editTextName.requestFocus();
             return;
         }
         if (login.isEmpty()){
-            editTextLogin.setError("Login is required");
+            editTextLogin.setError("Введите логин");
             editTextLogin.requestFocus();
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(login).matches()){
-            editTextLogin.setError("Provide valid login(email)");
+            editTextLogin.setError("Введите корректный логин(email)");
             editTextLogin.requestFocus();
             return;
         }
         if (password.isEmpty()){
-            editTextPassword.setError("Password is required");
+            editTextPassword.setError("Введите пароль");
             editTextPassword.requestFocus();
             return;
         }
         if (password.length()<8){
-            editTextPassword.setError("Min length password should be 8 symphols");
+            editTextPassword.setError("Минимальная длина 8 символов");
             editTextPassword.requestFocus();
             return;
         }
-
+        progressBar.setVisibility(View.VISIBLE);
         firebaseAuth.createUserWithEmailAndPassword(login,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -98,16 +102,18 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        Toast.makeText(RegisterActivity.this,"Register is susscesfull", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterActivity.this,"Регистрация прошла успешно", Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.VISIBLE);
                                     }else{
-                                        Toast.makeText(RegisterActivity.this,"Unsussesfull",Toast.LENGTH_LONG).show();
-
+                                        Toast.makeText(RegisterActivity.this,"Что-то пошло не так",Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             });
                         }
                         else{
-                            Toast.makeText(RegisterActivity.this,"Unsussesfullly",Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterActivity.this,"Что-то пошло не так",Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
