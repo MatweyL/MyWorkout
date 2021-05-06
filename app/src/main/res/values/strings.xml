@@ -3,6 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Eat_Button">Калорийность продуктов</string>
+    <string name="Count_calory">Рассчет калорийности</string>
     <string name="Exercises_list">Список упражнений</string>
     <string name="Create_Train">Создать тренировку</string>
     <string name="Trains_list">Список тренировок</string>
@@ -22,4 +23,11 @@
     <string name="au_register">Register</string>
     <string name="au_title">My Workout</string>
     <string name="au_name">Name</string>
+    <string name="male">Мужчина</string>
+    <string name="female">Женщина</string>
+    <string name="age">Введите возраст</string>
+    <string name="weight">Введите вес</string>
+    <string name="height">Введите рост</string>
+    <string name="Result">Результат</string>
+    <string name="Count">Рассчитать</string>
 </resources>

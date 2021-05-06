@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
-    private Button bTrain, bCreateTrain, bSeeTrains, bSeeExercises, bSome,bLogout;
+    private Button bTrain, bCreateTrain, bSeeTrains, bSeeExercises, bSome,bLogout,bCount;
     private FirebaseUser firebaseUser;
     private DatabaseReference databaseReference,databaseReference1;
     private String userIdDB;
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         bSeeExercises = findViewById(R.id.button_show_exercises_list);
         bSome = findViewById(R.id.button_some_b);
         bLogout=findViewById(R.id.button_logout);
+        bCount=findViewById(R.id.button_calory);
         bCreateTrain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        bCount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,CountCalory.class);
+                startActivity(i);
+            }
+        });
         bLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
         databaseReference1 = FirebaseDatabase.getInstance().getReference("Users");
         userIdDB=firebaseUser.getUid();
