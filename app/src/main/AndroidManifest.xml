@@ -11,12 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWorkout">
+        <activity android:name=".Matvey.myworkoutcreatingtrainsdemo.TrainActivity">
+        </activity>
+        <activity android:name=".Matvey.myworkoutcreatingtrainsdemo.TrainExercisesActivity">
+        </activity>
+        <activity android:name=".Matvey.myworkoutcreatingtrainsdemo.TrainsListActivity">
+        </activity>
+        <activity android:name=".Matvey.myworkoutcreatingtrainsdemo.UpdateExercise">
+        </activity>
+        <activity android:name=".Matvey.myworkoutcreatingtrainsdemo.Create_Exercise_Activity">
+        </activity>
+        <activity android:name=".Matvey.myworkoutcreatingtrainsdemo.Create_Train_Activity">
+        </activity>
         <activity android:name=".CountCalory"></activity>
         <activity android:name=".ResetPassword" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".FoodActivity" />
         <activity android:name=".Description_activity" />
-        <activity android:name=".CreateTrain" />
         <activity android:name=".LogotypeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

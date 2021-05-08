@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myworkout.Matvey.myworkoutcreatingtrainsdemo.Create_Train_Activity;
+import com.example.myworkout.Matvey.myworkoutcreatingtrainsdemo.TrainsListActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -39,7 +41,24 @@ public class MainActivity extends AppCompatActivity {
         bCreateTrain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CreateTrain.class);
+                Intent intent = new Intent(MainActivity.this, Create_Train_Activity.class);
+                intent.putExtra("ActivityName", "MainActivity");
+                startActivity(intent);
+            }
+        });
+        bSeeTrains.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TrainsListActivity.class);
+                intent.putExtra("training", false);
+                startActivity(intent);
+            }
+        });
+        bTrain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TrainsListActivity.class);
+                intent.putExtra("training", true);
                 startActivity(intent);
             }
         });
