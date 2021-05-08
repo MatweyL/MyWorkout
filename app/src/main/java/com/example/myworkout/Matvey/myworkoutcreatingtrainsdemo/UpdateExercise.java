@@ -57,7 +57,7 @@ public class UpdateExercise extends AppCompatActivity {
                     intent.putExtra("ActivityName", "UpdateExerciseActivity");
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Заполните все поля!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Заполните все поля", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -65,6 +65,7 @@ public class Create_Train_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 train.setName(train.getName()+ " " + train.getId());
+
                 trainNameView.setText(train.getName());
             }
         });
