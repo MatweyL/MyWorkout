@@ -91,6 +91,7 @@ public class ReadActivity extends AppCompatActivity {
 
     private void search1(String newText) {
         for(String object: title_list){
+            //System.out.println(object);
             if(object.contains(newText.toLowerCase())){
                 Toast.makeText(ReadActivity.this,"Есть!",Toast.LENGTH_LONG).show();
             }
@@ -99,5 +100,20 @@ public class ReadActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 }

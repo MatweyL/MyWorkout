@@ -25,7 +25,7 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
     private EditText editTextLA,editTextPA;
     private Button buttonSigIn;
     private FirebaseAuth firebaseAuth;
-    private ProgressBar progressBar;
+    //private ProgressBar progressBar;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
         buttonSigIn.setOnClickListener(this);
         editTextLA=findViewById(R.id.AuEditTextLogin);
         editTextPA=findViewById(R.id.RPEditTextPassword);
-        progressBar = findViewById(R.id.progressBar);
+        //progressBar = findViewById(R.id.progressBar);
         firebaseAuth = FirebaseAuth.getInstance();
 
     }
@@ -84,7 +84,7 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
             editTextPA.requestFocus();
             return;
         }
-        progressBar.setVisibility(View.VISIBLE);
+        //progressBar.setVisibility(View.VISIBLE);
         firebaseAuth.signInWithEmailAndPassword(login,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -93,7 +93,7 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
                     if (firebaseUser.isEmailVerified())
                     {
                     Toast.makeText(AuthorizationActivity.this,"Успех",Toast.LENGTH_LONG).show();
-                    progressBar.setVisibility(View.VISIBLE);
+                    //progressBar.setVisibility(View.VISIBLE);
                     startActivity(new Intent(AuthorizationActivity.this,MainActivity.class));
                     }
                     else{
@@ -103,7 +103,7 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
                 }
                 else{
                     Toast.makeText(AuthorizationActivity.this,"Проверьте введенные данные",Toast.LENGTH_LONG).show();
-                    progressBar.setVisibility(View.GONE);
+                    //progressBar.setVisibility(View.GONE);
                 }
             }
         });
