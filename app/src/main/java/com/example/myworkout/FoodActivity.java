@@ -4,9 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Database;
 
 import android.os.Bundle;
+import android.widget.SearchView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +22,7 @@ public class FoodActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     FoodMyAdapter foodMyAdapter;
     ArrayList<Food> list;
+    SearchView searchView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,7 @@ public class FoodActivity extends AppCompatActivity {
         list = new ArrayList<>();
         foodMyAdapter = new FoodMyAdapter(this,list);
         recyclerView.setAdapter(foodMyAdapter);
+        searchView=findViewById(R.id.searchFood);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -49,5 +51,33 @@ public class FoodActivity extends AppCompatActivity {
 
             }
         });
+        if (searchView!=null){
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    search(newText);
+                    return true;
+                }
+            });
+        }
     }
+
+    private void search(String str) {
+        ArrayList<Food> searList=new ArrayList<>();
+        for(Food object: list){
+            if(object.getTitle().toLowerCase().contains(str.toLowerCase())){
+                searList.add(object);
+            }
+        }
+        FoodMyAdapter foodMyAdapter = new FoodMyAdapter(this,searList);
+        recyclerView.setAdapter(foodMyAdapter);
+
+    }
+
+
 }
