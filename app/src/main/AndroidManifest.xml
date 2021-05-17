@@ -3,6 +3,7 @@
     package="com.example.myworkout">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWorkout">
-        <activity android:name=".searchdata"></activity>
         <activity android:name=".Matvey.myworkoutcreatingtrainsdemo.TrainActivity"></activity>
         <activity android:name=".Matvey.myworkoutcreatingtrainsdemo.TrainExercisesActivity"></activity>
         <activity android:name=".Matvey.myworkoutcreatingtrainsdemo.TrainsListActivity"></activity>

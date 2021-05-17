@@ -30,6 +30,7 @@ public class FoodActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.foodList);
         databaseReference= FirebaseDatabase.getInstance().getReference("food");
+        databaseReference.keepSynced(true);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<>();

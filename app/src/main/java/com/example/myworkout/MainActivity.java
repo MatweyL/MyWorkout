@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
         databaseReference1 = FirebaseDatabase.getInstance().getReference("Users");
+        databaseReference1.keepSynced(true);
         userIdDB=firebaseUser.getUid();
 
         final TextView greetingTV=findViewById(R.id.textViewGreeting);

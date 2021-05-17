@@ -35,7 +35,9 @@ public class ReadActivity extends AppCompatActivity {
         setContentView(R.layout.read_layout);
         listView=findViewById(R.id.ListView1);
         searchView1=findViewById(R.id.searchExers);
+
         databaseReference= FirebaseDatabase.getInstance().getReference("exercises");
+        databaseReference.keepSynced(true);
         exercise1 = new Exercise();
         title_list = new ArrayList<>();
         image_list = new ArrayList<>();
