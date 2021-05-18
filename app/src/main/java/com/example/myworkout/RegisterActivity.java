@@ -69,13 +69,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
         if (login.isEmpty()){
-            editTextLogin.setError("Введите логин");
+            editTextLogin.setError("Введите электронную почту(@gmail)");
             editTextLogin.requestFocus();
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(login).matches()){
-            editTextLogin.setError("Введите корректный логин(email)");
+            editTextLogin.setError("Введите корректный элнетронную почту(@gmail)");
             editTextLogin.requestFocus();
             return;
         }
@@ -102,7 +102,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        Toast.makeText(RegisterActivity.this,"Регистрация прошла успешно", Toast.LENGTH_LONG).show();
+                                        firebaseAuth.getCurrentUser().sendEmailVerification();
+                                        Toast.makeText(RegisterActivity.this,"Регистрация прошла успешно, пожалуйста, проверьте почту для подтверждения", Toast.LENGTH_LONG).show();
+                                        Intent i = new Intent(RegisterActivity.this,AuthorizationActivity.class);
+                                        startActivity(i);
                                         //progressBar.setVisibility(View.VISIBLE);
                                     }else{
                                         Toast.makeText(RegisterActivity.this,"Что-то пошло не так",Toast.LENGTH_LONG).show();

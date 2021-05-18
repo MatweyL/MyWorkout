@@ -40,13 +40,13 @@ public class ResetPassword extends AppCompatActivity {
     private void buttonReset() {
         String login = emailET.getText().toString().trim();
         if (login.isEmpty()){
-            emailET.setError("Введите логин");
+            emailET.setError("Введите электронную почту");
             emailET.requestFocus();
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(login).matches()){
-            emailET.setError("Введите корректный логин");
+            emailET.setError("Введите корректную электронную почту");
             emailET.requestFocus();
             return;
         }

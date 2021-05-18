@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 if(userAuth!=null){
                     String names = userAuth.name;
                     String login = userAuth.login;
-                    greetingTV.setText("Привет, "+ names+ " Удачной тренировки!");
+                    greetingTV.setText("Привет, "+ names+ "! Удачной тренировки!");
                 }
             }
 

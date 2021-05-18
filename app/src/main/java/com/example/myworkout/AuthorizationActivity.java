@@ -64,13 +64,13 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
         String password = editTextPA.getText().toString().trim();
 
         if (login.isEmpty()){
-            editTextLA.setError("Введите логин");
+            editTextLA.setError("Введите электронную почту");
             editTextLA.requestFocus();
             return;
         }
 
         if (!Patterns.EMAIL_ADDRESS.matcher(login).matches()){
-            editTextLA.setError("Введите корректный логин");
+            editTextLA.setError("Введите корректныую электронную почту");
             editTextLA.requestFocus();
             return;
         }
@@ -89,7 +89,7 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+                    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                     if (firebaseUser.isEmailVerified())
                     {
                     Toast.makeText(AuthorizationActivity.this,"Успех",Toast.LENGTH_LONG).show();
