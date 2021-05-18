@@ -30,7 +30,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     @NonNull
     @Override
     public ExerciseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(ctx).inflate(R.layout.recycler_view_exercise, parent, false);
+        View view = LayoutInflater.from(ctx).inflate(R.layout.recycler_view_exercise2, parent, false);
         return new ExerciseViewHolder(view);
     }
 
@@ -53,11 +53,11 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
         TextView textViewName, textViewNumberReps, textViewNumberSets, textViewTimeExercise, textViewTimeRest;
         public ExerciseViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewName = itemView.findViewById(R.id.exerciseName);
-            textViewNumberReps = itemView.findViewById(R.id.numberOfReps);
-            textViewNumberSets = itemView.findViewById(R.id.numberOfSets);
-            textViewTimeExercise = itemView.findViewById(R.id.timeOfExercise);
-            textViewTimeRest = itemView.findViewById(R.id.timeOfRest);
+            textViewName = itemView.findViewById(R.id.exerciseName2);
+            textViewNumberReps = itemView.findViewById(R.id.numberOfReps2);
+            textViewNumberSets = itemView.findViewById(R.id.numberOfSets2);
+            textViewTimeExercise = itemView.findViewById(R.id.weightOfExercise);
+            textViewTimeRest = itemView.findViewById(R.id.timeOfRest2);
             if (clickable) {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -72,3 +72,4 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
         }
     }
 }
+

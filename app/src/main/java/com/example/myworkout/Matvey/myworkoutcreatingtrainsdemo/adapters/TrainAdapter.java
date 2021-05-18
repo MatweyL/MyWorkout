@@ -29,18 +29,20 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.TrainViewHol
 
     @NonNull
     @Override
-    public TrainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(ctx).inflate(R.layout.recycler_view_train, parent, false);
+    public TrainAdapter.TrainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(ctx).inflate(R.layout.recycler_view_train2, parent, false);
         return new TrainViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TrainViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TrainAdapter.TrainViewHolder holder, int position) {
         Train tr = trains.get(position);
         holder.textViewName.setText(tr.getName());
         holder.textViewTargetMuscles.setText(tr.getTargetMuscles());
-        String trTime = Double.toString(Double.parseDouble(tr.getTimeOfTraining()) / 60);
-        holder.textViewTimeOfTrain.setText(trTime);
+        Integer trTimeMinutes = Integer.parseInt(tr.getTimeOfTraining()) / 60;
+        Integer trTimeSeconds = Integer.parseInt(tr.getTimeOfTraining()) % 60;
+        holder.textViewTimeOfTrain.setText(Integer.toString(trTimeMinutes));
+        holder.textViewTimeOfTrainSeconds.setText(Integer.toString(trTimeSeconds));
     }
 
     @Override
@@ -49,29 +51,30 @@ public class TrainAdapter extends RecyclerView.Adapter<TrainAdapter.TrainViewHol
     }
 
     public class TrainViewHolder  extends RecyclerView.ViewHolder {
-        TextView textViewName, textViewTargetMuscles, textViewTimeOfTrain;
+        TextView textViewName, textViewTargetMuscles, textViewTimeOfTrain, textViewTimeOfTrainSeconds;
         public TrainViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewName = itemView.findViewById(R.id.textViewName);
-            textViewTargetMuscles = itemView.findViewById(R.id.textViewTargetMuscles);
-            textViewTimeOfTrain = itemView.findViewById(R.id.textViewTimeOfTraining);
+            textViewName = itemView.findViewById(R.id.textViewName1);
+            textViewTargetMuscles = itemView.findViewById(R.id.textViewTargetMuscles1);
+            textViewTimeOfTrain = itemView.findViewById(R.id.textViewTimeOfTraining1);
+            textViewTimeOfTrainSeconds = itemView.findViewById(R.id.textViewTimeOfTrainingSeconds1);
             itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (training == false) {
-                            Train train = trains.get(getAdapterPosition());
-                            Intent intent = new Intent(ctx, TrainExercisesActivity.class);
-                            intent.putExtra(Train.class.getSimpleName(), train);
-                            ctx.startActivity(intent);
-                        }
-                        else {
-                            Train train = trains.get(getAdapterPosition());
-                            Intent intent = new Intent(ctx, TrainActivity.class);
-                            intent.putExtra(Train.class.getSimpleName(), train);
-                            ctx.startActivity(intent);
-                        }
+                @Override
+                public void onClick(View v) {
+                    if (training == false) {
+                        Train train = trains.get(getAdapterPosition());
+                        Intent intent = new Intent(ctx, TrainExercisesActivity.class);
+                        intent.putExtra(Train.class.getSimpleName(), train);
+                        ctx.startActivity(intent);
                     }
-                });
+                    else {
+                        Train train = trains.get(getAdapterPosition());
+                        Intent intent = new Intent(ctx, TrainActivity.class);
+                        intent.putExtra(Train.class.getSimpleName(), train);
+                        ctx.startActivity(intent);
+                    }
+                }
+            });
 
 
         }

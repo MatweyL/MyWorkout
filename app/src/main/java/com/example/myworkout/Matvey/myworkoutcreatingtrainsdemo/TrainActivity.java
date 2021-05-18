@@ -1,13 +1,18 @@
 package com.example.myworkout.Matvey.myworkoutcreatingtrainsdemo;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -21,16 +26,20 @@ import com.example.myworkout.R;
 import java.util.List;
 
 public class TrainActivity extends AppCompatActivity {
-    private TextView tvNumOfSet, tvNumOfRep, tvNameOfExercise, tvNameOfTrain, tvStateExercise, tvTimer, tvCurrentEx, tvCurrentSet;
+    private TextView tvNumOfSet, tvNumOfRep, tvNameOfExercise, tvNameOfTrain, tvStateExercise, tvTimer, tvCurrentEx, tvCurrentSet, tvCurrentWeight;
     private TableLayout tlSetNum, tlAboutEx;
     private ConstraintLayout clStateTimer;
     private Button cmd;
+    private ImageButton btn_back;
     private Train train;
     private List<Exercise> exercises;
-    private Exercise tempExercise;
+    private  Exercise tempExercise;
     private int command = 0, counter = 0;
     private long sets, setsNumber, timeRest;
     private CountDownTimer countDownTimer;
+    private Vibrator vibrator;
+
+    private boolean timerWorking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +48,10 @@ public class TrainActivity extends AppCompatActivity {
 
         train = (Train) getIntent().getExtras().getSerializable(Train.class.getSimpleName());
         exercises = DBHelper.getInstance(getApplicationContext()).getAppDatabase().getTrainDao().getTrainExercisesById(train.getId());
+        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         findAllWidgets();
+        tvNameOfTrain.setText(train.getName());
         setAllWidgetsVisibility(false);
         startTrain();
 
@@ -53,10 +64,12 @@ public class TrainActivity extends AppCompatActivity {
         tvNameOfExercise = findViewById(R.id.textViewExerciseNameTr);
         tvNameOfTrain = findViewById(R.id.textViewNameOfTrainTr);
         cmd = findViewById(R.id.buttonCommand);
+        btn_back = findViewById(R.id.button_back_to_train_list);
         tvStateExercise = findViewById(R.id.textViewStateExercise);
         tvTimer = findViewById(R.id.timer);
         tvCurrentEx = findViewById(R.id.tvCurrentExercise);
         tvCurrentSet = findViewById(R.id.textViewNumOfSet);
+        tvCurrentWeight = findViewById(R.id.textViewWeightInExercise);
 
         tlSetNum = findViewById(R.id.tlSetNum);
         tlAboutEx = findViewById(R.id.tlAboutExercise);
@@ -92,18 +105,45 @@ public class TrainActivity extends AppCompatActivity {
     private void startTrain(){
         tvNameOfExercise.setText(train.getName());
         cmd.setText("Начать тренировку!");
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(TrainActivity.this);
+                builder.setTitle("Вы уверены, что хотите прекратить тренировку?");
+                builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (timerWorking) {
+                            countDownTimer.cancel();
+                        }
+                        Intent intent = new Intent(TrainActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                AlertDialog ad = builder.create();
+                ad.show();
+            }
+        });
         cmdAction();
     }
 
     private void setExerciseWidgets(Exercise ex) {
-            setsNumber = Long.parseLong(ex.getSetsNumber());
-            timeRest = Long.parseLong(ex.getTimeRest());
-            tvNameOfExercise.setText(ex.getName());
-            tvNumOfRep.setText(ex.getRepsNumber());
-            tvNumOfSet.setText(ex.getSetsNumber());
-            cmd.setText("Подход готов!");
-            sets = 1;
-        }
+        setsNumber = Long.parseLong(ex.getSetsNumber());
+        timeRest = Long.parseLong(ex.getTimeRest());
+        tvNameOfExercise.setText(ex.getName());
+        tvNumOfRep.setText(ex.getRepsNumber());
+        tvNumOfSet.setText(ex.getSetsNumber());
+        tvCurrentWeight.setText(ex.getTimeExercise());
+        cmd.setText("Подход готов!");
+        sets = 1;
+    }
 
 
     private Exercise getNextExercise() {
@@ -142,12 +182,14 @@ public class TrainActivity extends AppCompatActivity {
                         }
                         setTimerVisibility(true);
                         reverseTimer((int) timeRest, tvTimer);
+                        timerWorking = true;
                         break;
                     }
                     case 2: {
                         cmd.setText("Подход готов!");
                         tvCurrentSet.setText(Long.toString(sets));
                         countDownTimer.cancel();
+                        timerWorking = false;
                         setTimerVisibility(false);
                         command = 1;
                         break;
@@ -156,6 +198,8 @@ public class TrainActivity extends AppCompatActivity {
                         tempExercise = getNextExercise();
                         if (tempExercise == null)
                         {
+                            countDownTimer.cancel();
+                            timerWorking = false;
                             setAllWidgetsVisibility(false);
                             cmd.setText("Выйти");
                             command = 4;
@@ -165,7 +209,9 @@ public class TrainActivity extends AppCompatActivity {
                         sets = 1;
                         tvCurrentSet.setText(Long.toString(sets));
                         countDownTimer.cancel();
+                        timerWorking = false;
                         setTimerVisibility(false);
+                        countDownTimer.cancel();
                         counter++;
                         command = 1;
                         break;
@@ -198,11 +244,14 @@ public class TrainActivity extends AppCompatActivity {
 
             public void onFinish() {
                 setTimerVisibility(false);
+                vibrator.vibrate(1000);
                 tvCurrentSet.setText(Long.toString(sets));
                 cmd.setText("Подход готов!");
                 command = 1;
             }
         };
+
+
         countDownTimer.start();
     }
 }

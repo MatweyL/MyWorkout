@@ -21,7 +21,7 @@ import java.util.List;
 
 public class TrainExercisesActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private TextView trainNameView, targetMusclesView, textViewTimeOfTrain2;
+    private TextView trainNameView, targetMusclesView, textViewTimeOfTrainMinutes2, textViewTimeOfTrainSeconds2;
     private Button btn_update;
     private List<Exercise> exercises;
     @Override
@@ -35,9 +35,13 @@ public class TrainExercisesActivity extends AppCompatActivity {
         targetMusclesView = findViewById(R.id.textViewTargetMusclesInTrain);
         trainNameView.setText(train.getName());
         targetMusclesView.setText(train.getTargetMuscles());
-        textViewTimeOfTrain2 = findViewById(R.id.textViewTimeOfTrain2);
-        String trTime = Double.toString((Double.parseDouble(train.getTimeOfTraining()) / 60));
-        textViewTimeOfTrain2.setText(trTime);
+
+        textViewTimeOfTrainMinutes2 = findViewById(R.id.textViewTimeOfTrainMinutes2);
+        textViewTimeOfTrainSeconds2 = findViewById(R.id.textViewTimeOfTrainSeconds2);
+        Integer trTimeMinutes = Integer.parseInt(train.getTimeOfTraining()) / 60;
+        Integer trTimeSeconds = Integer.parseInt(train.getTimeOfTraining()) % 60;
+        textViewTimeOfTrainMinutes2.setText(Integer.toString(trTimeMinutes));
+        textViewTimeOfTrainSeconds2.setText(Integer.toString(trTimeSeconds));
         recyclerView = findViewById(R.id.recycler_view_exercises_in_train);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         prepareData(train);
