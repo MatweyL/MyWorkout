@@ -26,7 +26,7 @@ public class ResetPassword extends AppCompatActivity {
         setContentView(R.layout.activity_reset_password);
         emailET=findViewById(R.id.RPEditTextPassword);
         buttonReset = findViewById(R.id.RPRegButton);
-        progressBar=findViewById(R.id.progressBar2);
+        //progressBar=findViewById(R.id.progressBar2);
         firebaseAuth=FirebaseAuth.getInstance();
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +50,7 @@ public class ResetPassword extends AppCompatActivity {
             emailET.requestFocus();
             return;
         }
-        progressBar.setVisibility(View.VISIBLE);
+        //progressBar.setVisibility(View.VISIBLE);
         firebaseAuth.sendPasswordResetEmail(login).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

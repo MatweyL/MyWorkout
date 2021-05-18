@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         editTextLogin=findViewById(R.id.AuEditTextLogin);
         editTextPassword=findViewById(R.id.RPEditTextPassword);
 
-        progressBar=findViewById(R.id.progressBar3);
+        //progressBar=findViewById(R.id.progressBar3);
 
     }
 
@@ -89,7 +89,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             editTextPassword.requestFocus();
             return;
         }
-        progressBar.setVisibility(View.VISIBLE);
+        //progressBar.setVisibility(View.VISIBLE);
         firebaseAuth.createUserWithEmailAndPassword(login,password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -103,17 +103,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         Toast.makeText(RegisterActivity.this,"Регистрация прошла успешно", Toast.LENGTH_LONG).show();
-                                        progressBar.setVisibility(View.VISIBLE);
+                                        //progressBar.setVisibility(View.VISIBLE);
                                     }else{
                                         Toast.makeText(RegisterActivity.this,"Что-то пошло не так",Toast.LENGTH_LONG).show();
-                                        progressBar.setVisibility(View.GONE);
+                                        //progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             });
                         }
                         else{
                             Toast.makeText(RegisterActivity.this,"Что-то пошло не так",Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
+                            //progressBar.setVisibility(View.GONE);
                         }
                     }
                 });

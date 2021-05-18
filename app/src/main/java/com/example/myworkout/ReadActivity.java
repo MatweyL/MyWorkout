@@ -2,10 +2,13 @@ package com.example.myworkout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,11 +29,13 @@ public class ReadActivity extends AppCompatActivity {
     List<String> title_list, description_list,image_list;
     ArrayAdapter<String>  arrayAdapter;
     Exercise exercise1;
+    SearchView searchView1;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.read_layout);
         listView=findViewById(R.id.ListView1);
+        searchView1=findViewById(R.id.searchExers);
         databaseReference= FirebaseDatabase.getInstance().getReference("exercises");
         exercise1 = new Exercise();
         title_list = new ArrayList<>();
@@ -69,5 +74,53 @@ public class ReadActivity extends AppCompatActivity {
 
             }
         });/**/
+        if (searchView1!=null){
+            searchView1.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    search1(newText);
+                    return true;
+                }
+            });
+        }
+    }
+
+    private void search1(String newText) {
+        if(title_list.contains(newText)){
+            Toast.makeText(ReadActivity.this,"Есть!",Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(ReadActivity.this,"Мы еще не добавили!",Toast.LENGTH_SHORT).show();
+        }
+        /*for(String object: title_list){
+            Log.d("STRING:", object);
+            if(newText.toLowerCase().contains(object.toLowerCase())){
+                Toast.makeText(ReadActivity.this,"Есть!",Toast.LENGTH_LONG).show();
+            }
+            else{
+                Toast.makeText(ReadActivity.this,"Мы еще не добавили!",Toast.LENGTH_SHORT).show();
+            }
+        }*/
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 }
