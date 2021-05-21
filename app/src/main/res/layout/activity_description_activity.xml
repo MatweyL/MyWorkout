@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/circle_layout"
+    android:background="@color/main_background1"
     android:padding="10dp"
     tools:context=".Description_activity">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/button_yellow_for_stroke">
 
         <ImageView
             android:id="@+id/imageView1"
@@ -24,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="0dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
     </LinearLayout>

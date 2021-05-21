@@ -18,6 +18,6 @@
         android:id="@+id/ListView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/menu_background_gradient"
+        android:background="@color/main_background1"
         android:scrollbarSize="20dp"></ListView>
 </LinearLayout>

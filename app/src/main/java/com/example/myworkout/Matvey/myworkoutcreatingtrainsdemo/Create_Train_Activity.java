@@ -33,6 +33,7 @@ public class Create_Train_Activity extends AppCompatActivity {
     private FloatingActionButton btn_delete, btn_add;
     private TrainDao trainDao;
     private RecyclerView recyclerView;
+    private Train train;
     private List<Exercise> exercises;
     private long lastTrainId;
 
@@ -43,7 +44,7 @@ public class Create_Train_Activity extends AppCompatActivity {
         findAllWidgets();
 
         trainDao = DBHelper.getInstance(getApplicationContext()).getAppDatabase().getTrainDao();
-        Train train;
+
 
         if (getIntent().getStringExtra("ActivityName").equals("CreateExerciseActivity"))
         {
@@ -114,26 +115,30 @@ public class Create_Train_Activity extends AppCompatActivity {
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(Create_Train_Activity.this);
-                builder.setTitle("Вы уверены, что хотите удалить тренировку?");
-                builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        deleteTrainInThread(trainDao, train);
-                        Intent intent = new Intent(Create_Train_Activity.this, MainActivity.class);
-                        startActivity(intent);
-                    }
-                });
-                builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-                AlertDialog ad = builder.create();
-                ad.show();
+                deleteTrain();
             }
         });
+    }
+
+    private void deleteTrain() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Create_Train_Activity.this);
+        builder.setTitle("Вы уверены, что хотите удалить тренировку?");
+        builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                deleteTrainInThread(trainDao, train);
+                Intent intent = new Intent(Create_Train_Activity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        AlertDialog ad = builder.create();
+        ad.show();
     }
 
     private void setLastTrainId(TrainDao trainDao) {
@@ -202,5 +207,10 @@ public class Create_Train_Activity extends AppCompatActivity {
         btn_add = findViewById(R.id.button_add);
         btn_save = findViewById(R.id.button_save_train);
         btn_delete = findViewById(R.id.button_delete_creatingTrain);
+    }
+
+    @Override
+    public void onBackPressed(){
+        deleteTrain();
     }
 }

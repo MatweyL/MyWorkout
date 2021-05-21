@@ -108,32 +108,35 @@ public class TrainActivity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(TrainActivity.this);
-                builder.setTitle("Вы уверены, что хотите прекратить тренировку?");
-                builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        if (timerWorking) {
-                            countDownTimer.cancel();
-                        }
-                        Intent intent = new Intent(TrainActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    }
-                });
-                builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-
-                    }
-                });
-
-                AlertDialog ad = builder.create();
-                ad.show();
+                endOfTrain();
             }
         });
         cmdAction();
     }
 
+    private void endOfTrain() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(TrainActivity.this);
+        builder.setTitle("Вы уверены, что хотите прекратить тренировку?");
+        builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (timerWorking) {
+                    countDownTimer.cancel();
+                }
+                Intent intent = new Intent(TrainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        AlertDialog ad = builder.create();
+        ad.show();
+    }
     private void setExerciseWidgets(Exercise ex) {
         setsNumber = Long.parseLong(ex.getSetsNumber());
         timeRest = Long.parseLong(ex.getTimeRest());
@@ -253,5 +256,10 @@ public class TrainActivity extends AppCompatActivity {
 
 
         countDownTimer.start();
+    }
+
+    @Override
+    public void onBackPressed(){
+        endOfTrain();
     }
 }

@@ -2,12 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/appCommonTextStyle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background1"
     tools:context=".Matvey.myworkoutcreatingtrainsdemo.TrainExercisesActivity">
 
     <TextView
         android:id="@+id/textView8"
+        style="@style/appCommonTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -29,6 +32,7 @@
 
         <TextView
             android:id="@+id/textView"
+            style="@style/appCommonTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Целевые мышцы:"
@@ -38,6 +42,7 @@
 
         <TextView
             android:id="@+id/textViewTargetMusclesInTrain"
+            style="@style/appCommonTextStyle"
             android:layout_width="0dp"
             android:layout_height="24dp"
             android:inputType="textMultiLine"
@@ -50,6 +55,7 @@
 
         <TextView
             android:id="@+id/textViewTimeOfTrainMinutes2"
+            style="@style/appCommonTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -61,18 +67,22 @@
 
         <TextView
             android:id="@+id/textViewNameOfTrain"
+            style="@style/appCommonTextStyle"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_height="37dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
             android:text="Название"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textView13"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewMinutes"
+            style="@style/appCommonTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
@@ -84,6 +94,7 @@
 
         <TextView
             android:id="@+id/textView2"
+            style="@style/appCommonTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Время тренировки:"
@@ -93,6 +104,7 @@
 
         <TextView
             android:id="@+id/textViewTimeOfTrainSeconds2"
+            style="@style/appCommonTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="30"
@@ -102,6 +114,7 @@
 
         <TextView
             android:id="@+id/textView6"
+            style="@style/appCommonTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
@@ -110,14 +123,30 @@
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/textViewTimeOfTrainSeconds2"
             app:layout_constraintTop_toBottomOf="@+id/textViewTargetMusclesInTrain" />
+
+        <TextView
+            android:id="@+id/textView13"
+            style="@style/appCommonTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Название:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_update_train"
+        style="@style/appTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Редактировать"
-        app:backgroundTint="#F1521F"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/button_save_style"
+        android:text="@string/red_train"
         app:layout_constraintBottom_toTopOf="@+id/button_share_train"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -129,13 +158,22 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/button_update_train"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_share_train"
+        style="@style/appTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_share_style"
         android:text="Поделиться тренировкой"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

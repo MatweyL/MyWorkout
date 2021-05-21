@@ -36,4 +36,5 @@
     <string name="observe_train_list">Просмотр тренировок</string>
     <string name="time_rest_after_set">Время отдыха между подходами</string>
     <string name="delete">Удалить</string>
+    <string name="red_train">Редактировать</string>
 </resources>

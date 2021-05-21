@@ -9,15 +9,15 @@
     tools:context=".Matvey.myworkoutcreatingtrainsdemo.Create_Exercise_Activity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_save_exercise"
+        android:background="@drawable/button_save_style"
         style="@style/menuTextStyle"
+        android:id="@+id/button_save_exercise"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:background="@drawable/button_save_style"
         android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
