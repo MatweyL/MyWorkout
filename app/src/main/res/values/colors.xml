@@ -26,4 +26,6 @@
     <color name="gray_white">#C8C6C7</color>
     <color name="textViewColor">#FFFFFF</color>
     <color name="editTextColor">#B1B0B0</color>
+    <color name="button_red_p">#EF0202</color>
+    <color name="button_red_unp">#FF0000</color>
 </resources>

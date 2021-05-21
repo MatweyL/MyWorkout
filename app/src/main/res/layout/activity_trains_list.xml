@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background1"
     tools:context=".Matvey.myworkoutcreatingtrainsdemo.TrainsListActivity">
+
+    <TableLayout
+        android:id="@+id/tlTrainList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_menu_in_train"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/button_back_to_main_menuM"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/title_menu_in_train_button"
+                app:srcCompat="@drawable/abc_vector_test" />
+
+            <TextView
+                android:id="@+id/textViewTitleOfTrainList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+
+                android:text="@string/observe_train_list"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+    </TableLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_trains"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="260dp"
-        tools:layout_editor_absoluteY="256dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tlTrainList" />
 </androidx.constraintlayout.widget.ConstraintLayout>

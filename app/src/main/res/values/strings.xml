@@ -33,4 +33,7 @@
     <string name="lets_train">Тренироваться!</string>
     <string name="save">Сохранить</string>
     <string name="nullTime">0:00</string>
+    <string name="observe_train_list">Просмотр тренировок</string>
+    <string name="time_rest_after_set">Время отдыха между подходами</string>
+    <string name="delete">Удалить</string>
 </resources>

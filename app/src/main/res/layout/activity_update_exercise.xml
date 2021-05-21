@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:padding="10dp"
     android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/main_background1"
     tools:context=".Matvey.myworkoutcreatingtrainsdemo.UpdateExercise">
 
     <EditText
@@ -15,13 +16,15 @@
         android:gravity="start|top"
         android:hint="Введите название"
         android:inputType="textMultiLine"
+        android:textColor="@color/textViewColor"
+        android:textColorHint="@color/editTextColor"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_save_exercise"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -30,7 +33,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="Сохранить"
-        app:backgroundTint="#1A981F"
+        style="@style/menuTextStyle"
+        android:background="@drawable/button_save_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +43,7 @@
 
     <TextView
         android:id="@+id/textView10"
+        style="@style/appCommonTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Название упражнения"
@@ -50,6 +55,7 @@
 
     <TextView
         android:id="@+id/textView11"
+        style="@style/appCommonTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -72,11 +78,12 @@
 
         <Button
             android:id="@+id/button_m1u"
+            style="@style/appTextStyle"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="-"
-            app:backgroundTint="#FF9800" />
+            app:backgroundTint="@color/orange_for_button_inc_dec" />
 
         <EditText
             android:id="@+id/editTextNumberOfReps"
@@ -85,15 +92,18 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Количество повторений"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@color/textViewColor"
+            android:textColorHint="@color/editTextColor" />
 
         <Button
             android:id="@+id/button_p1u"
+            style="@style/appTextStyle"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="0"
             android:text="+"
-            app:backgroundTint="#FF9800" />
+            app:backgroundTint="@color/orange_for_button_inc_dec" />
     </LinearLayout>
 
     <LinearLayout
@@ -108,11 +118,12 @@
 
         <Button
             android:id="@+id/button_m2u"
+            style="@style/appTextStyle"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="-"
-            app:backgroundTint="#FF9800" />
+            app:backgroundTint="@color/orange_for_button_inc_dec" />
 
         <EditText
             android:id="@+id/editTextNumberOfSets"
@@ -121,15 +132,18 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Количество кругов"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@color/textViewColor"
+            android:textColorHint="@color/editTextColor" />
 
         <Button
             android:id="@+id/button_p2u"
+            style="@style/appTextStyle"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="0"
             android:text="+"
-            app:backgroundTint="#FF9800" />
+            app:backgroundTint="@color/orange_for_button_inc_dec" />
     </LinearLayout>
 
     <LinearLayout
@@ -144,11 +158,12 @@
 
         <Button
             android:id="@+id/button_m3u"
+            style="@style/appTextStyle"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="-"
-            app:backgroundTint="#FF9800" />
+            app:backgroundTint="@color/orange_for_button_inc_dec" />
 
         <EditText
             android:id="@+id/editTextNumberOfWeight"
@@ -158,15 +173,18 @@
             android:ems="10"
             android:hint="Вес снаряда, (кг)"
             android:inputType="number"
-            android:text="0" />
+            android:text="0"
+            android:textColor="@color/textViewColor"
+            android:textColorHint="@color/editTextColor" />
 
         <Button
             android:id="@+id/button_p3u"
+            style="@style/appTextStyle"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="0"
             android:text="+"
-            app:backgroundTint="#FF9800" />
+            app:backgroundTint="@color/orange_for_button_inc_dec" />
     </LinearLayout>
 
     <LinearLayout
@@ -181,11 +199,12 @@
 
         <Button
             android:id="@+id/button_m4u"
+            style="@style/appTextStyle"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="-"
-            app:backgroundTint="#FF9800" />
+            app:backgroundTint="@color/orange_for_button_inc_dec" />
 
         <EditText
             android:id="@+id/editTextTimeOfRest"
@@ -194,19 +213,23 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Время, (с)"
-            android:inputType="number" />
+            android:inputType="number"
+            android:textColor="@color/textViewColor"
+            android:textColorHint="@color/editTextColor" />
 
         <Button
             android:id="@+id/button_p4u"
+            style="@style/appTextStyle"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="0"
             android:text="+"
-            app:backgroundTint="#FF9800" />
+            app:backgroundTint="@color/orange_for_button_inc_dec" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/textView12"
+        style="@style/appCommonTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -219,6 +242,7 @@
 
     <TextView
         android:id="@+id/textView14"
+        style="@style/appCommonTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -230,17 +254,18 @@
 
     <TextView
         android:id="@+id/textView15"
+        style="@style/appCommonTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Время отдыха между подходами"
+        android:text="@string/time_rest_after_set"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear3" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_delete"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -249,8 +274,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Удалить"
-        app:backgroundTint="#EF0202"
+        android:text="@string/delete"
+        style="@style/menuTextStyle"
+        android:background = "@drawable/button_delete_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_save_exercise" />
