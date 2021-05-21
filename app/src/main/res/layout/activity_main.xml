@@ -13,6 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="52dp"
+        android:gravity="center"
         android:hint=""
         android:textColor="@color/white"
         android:textColorHint="@color/white"

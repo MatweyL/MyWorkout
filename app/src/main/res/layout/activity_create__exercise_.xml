@@ -58,6 +58,7 @@
 
             <Button
                 android:id="@+id/button_m2c"
+                style="@style/appTextStyle"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
@@ -79,6 +80,7 @@
 
             <Button
                 android:id="@+id/button_p2c"
+                style="@style/appTextStyle"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="0"
@@ -89,6 +91,7 @@
 
         <TextView
             android:id="@+id/textView10"
+            style="@style/appCommonTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Название упражнения"
@@ -100,6 +103,7 @@
 
         <TextView
             android:id="@+id/textView15"
+            style="@style/appCommonTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Время отдыха между подходами"
@@ -121,6 +125,7 @@
 
             <Button
                 android:id="@+id/button_m1c"
+                style="@style/appTextStyle"
                 android:layout_width="44dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
@@ -141,6 +146,7 @@
 
             <Button
                 android:id="@+id/button_p1c"
+                style="@style/appTextStyle"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="0"
@@ -151,6 +157,7 @@
 
         <TextView
             android:id="@+id/textView11"
+            style="@style/appCommonTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Количество потворений"
@@ -162,6 +169,7 @@
 
         <TextView
             android:id="@+id/textView14"
+            style="@style/appCommonTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Вес снаряда"
@@ -173,6 +181,7 @@
 
         <TextView
             android:id="@+id/textView12"
+            style="@style/appCommonTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -194,6 +203,7 @@
 
             <Button
                 android:id="@+id/button_m4c"
+                style="@style/appTextStyle"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
@@ -233,6 +243,7 @@
 
             <Button
                 android:id="@+id/button_m3c"
+                style="@style/appTextStyle"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
@@ -254,6 +265,7 @@
 
             <Button
                 android:id="@+id/button_p3c"
+                style="@style/appTextStyle"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_weight="0"

@@ -18,4 +18,17 @@
     <style name="splashTheme" parent="menuTextStyle">
         <item name="android:windowBackground">@drawable/logo</item>
     </style>
+    <style name="appTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/button_menu_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#020202</item>
+        <item name="android:shadowRadius">5</item>
+        <item name="android:shadowDx">-2</item>
+    </style>
+    <style name="appCommonTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/button_menu_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

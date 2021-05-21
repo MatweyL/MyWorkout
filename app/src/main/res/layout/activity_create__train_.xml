@@ -5,6 +5,7 @@
     android:id="@+id/addExercise"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background1"
     tools:context=".Matvey.myworkoutcreatingtrainsdemo.Create_Train_Activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,8 +18,9 @@
 
         <TextView
             android:id="@+id/textView41"
-            android:layout_width="153dp"
-            android:layout_height="27dp"
+            style="@style/appCommonTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
             android:layout_marginTop="8dp"
             android:text="Целевые мышцы:"
             android:textSize="18sp"
@@ -28,14 +30,14 @@
         <EditText
             android:id="@+id/editTextTargetMuscles"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
+            android:layout_height="41dp"
             android:ems="10"
             android:gravity="start|top"
-            android:inputType="textMultiLine"
             android:text="нет"
+            android:textColor="@color/textViewColor"
+            android:textColorHint="@color/editTextColor"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/textView41"
             app:layout_constraintTop_toBottomOf="@+id/editTextTrainNameView" />
 
@@ -44,8 +46,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:inputType="textMultiLine"
             android:text="Тренировка"
+            android:textColor="@color/textViewColor"
+            android:textColorHint="@color/editTextColor"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -53,6 +56,7 @@
 
         <TextView
             android:id="@+id/textView3"
+            style="@style/appCommonTextStyle"
             android:layout_width="95dp"
             android:layout_height="20dp"
             android:layout_marginTop="16dp"
@@ -75,6 +79,7 @@
 
     <TextView
         android:id="@+id/textView5"
+        style="@style/appCommonTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -108,16 +113,17 @@
             app:backgroundTint="#EC102A"
             app:srcCompat="@android:drawable/ic_delete" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_save_train"
+            style="@style/appTextStyle"
+            android:background="@drawable/button_save_style"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="16dp"
             android:layout_weight="1"
-            android:text="Сохранить"
-            app:backgroundTint="#16831B" />
+            android:text="Сохранить"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_add"
@@ -128,7 +134,7 @@
             android:layout_marginBottom="16dp"
             android:layout_weight="0"
             android:clickable="true"
-            app:backgroundTint="#FF9800"
+            app:backgroundTint="@color/button_orange_for_unpressed"
             app:srcCompat="@android:drawable/ic_input_add" />
     </LinearLayout>
 
