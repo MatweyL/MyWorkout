@@ -38,17 +38,32 @@ public class CountCalory extends AppCompatActivity {
         radioGroup=findViewById(R.id.radioGroup);
         radioButton=findViewById(R.id.radioButtonF);
         radioButton2=findViewById(R.id.radioButtonM);
-
+        radioButton2.setChecked(true);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, activ);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        setRadioButtonsListener(radioGroup);
+
 
 
         bRes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setRadioButtonsListener(radioGroup);
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        switch (checkedId){
+                            case R.id.radioButtonF:
+                                G=2;
+                                break;
+                            case R.id.radioButtonM:
+                                G=1;
+                                break;
+                            case -1:
+                                G=0;
+                                break;
+                        }
+                    }
+                });
                 AdapterView.OnItemSelectedListener itemSelectedListener = new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -132,23 +147,5 @@ public class CountCalory extends AppCompatActivity {
             }
         });
 
-    }
-    private void setRadioButtonsListener(RadioGroup radioGroup) {
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.radioButtonF:
-                        G=2;
-                        break;
-                    case R.id.radioButtonM:
-                        G=1;
-                        break;
-                    case -1:
-                        G=0;
-                        break;
-                }
-            }
-        });
     }
 }
