@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="button_menu_size">20sp</dimen>
+    <dimen name="textSmallSize">16sp</dimen>
     <dimen name="button_menu_margin">64dp</dimen>
     <dimen name="button_pm_t_size">18sp</dimen>
 </resources>

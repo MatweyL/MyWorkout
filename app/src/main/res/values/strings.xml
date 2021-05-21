@@ -32,4 +32,5 @@
     <string name="Count">Рассчитать</string>
     <string name="lets_train">Тренироваться!</string>
     <string name="save">Сохранить</string>
+    <string name="nullTime">0:00</string>
 </resources>

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background1"
+    android:padding="5dp"
     tools:context=".Matvey.myworkoutcreatingtrainsdemo.Create_Train_Activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
