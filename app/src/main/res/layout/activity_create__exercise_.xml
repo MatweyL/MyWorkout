@@ -4,238 +4,263 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background1"
+    android:padding="10dp"
     tools:context=".Matvey.myworkoutcreatingtrainsdemo.Create_Exercise_Activity">
 
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Введите название"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_save_exercise"
+        style="@style/menuTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Сохранить"
-        app:backgroundTint="#1A981F"
+        android:background="@drawable/button_save_style"
+        android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear4"
-        app:layout_constraintVertical_bias="0.066" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Название упражнения"
-        android:textSize="18sp"
+        android:background="@color/main_background1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Количество потворений"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
-
-    <LinearLayout
-        android:id="@+id/linear1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11">
-
-        <Button
-            android:id="@+id/button_m1c"
-            android:layout_width="44dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            app:backgroundTint="#FF9800"
-            android:text="-" />
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editTextNumberOfReps"
-            android:layout_width="match_parent"
+            android:id="@+id/editTextName"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:ems="10"
-            android:hint="Количество повторений"
-            android:inputType="number" />
+            android:gravity="start|top"
+            android:hint="Введите название"
+            android:textColor="@color/textViewColor"
+            android:textColorHint="@color/editTextColor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-        <Button
-            android:id="@+id/button_p1c"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_weight="0"
-            android:text="+"
-            app:backgroundTint="#FF9800" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12">
-
-        <Button
-            android:id="@+id/button_m2c"
-            android:layout_width="50dp"
+        <LinearLayout
+            android:id="@+id/linear2"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="-"
-            app:backgroundTint="#FF9800" />
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12">
 
-        <EditText
-            android:id="@+id/editTextNumberOfSets"
-            android:layout_width="match_parent"
+            <Button
+                android:id="@+id/button_m2c"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/button_pm_t_size"
+                app:backgroundTint="@color/orange_for_button_inc_dec" />
+
+            <EditText
+                android:id="@+id/editTextNumberOfSets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Количество кругов"
+                android:inputType="number"
+                android:textColor="@color/textViewColor"
+                android:textColorHint="@color/editTextColor" />
+
+            <Button
+                android:id="@+id/button_p2c"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:text="+"
+                android:textSize="@dimen/button_pm_t_size"
+                app:backgroundTint="@color/orange_for_button_inc_dec" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Количество кругов"
-            android:inputType="number" />
+            android:text="Название упражнения"
+            android:textColor="@color/textViewColor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button_p2c"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_weight="0"
-            android:text="+"
-            app:backgroundTint="#FF9800" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14">
-
-        <Button
-            android:id="@+id/button_m3c"
-            android:layout_width="50dp"
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="-"
-            app:backgroundTint="#FF9800" />
+            android:text="Время отдыха между подходами"
+            android:textColor="@color/textViewColor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear3" />
 
-        <EditText
-            android:id="@+id/editTextNumberOfWeight"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Вес снаряда, (кг)"
-            android:inputType="number"
-            android:text="0" />
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11">
 
-        <Button
-            android:id="@+id/button_p3c"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_weight="0"
-            android:text="+"
-            app:backgroundTint="#FF9800" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/button_m1c"
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="-"
+                android:textSize="@dimen/button_pm_t_size"
+                app:backgroundTint="@color/orange_for_button_inc_dec" />
 
-    <LinearLayout
-        android:id="@+id/linear4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15">
+            <EditText
+                android:id="@+id/editTextNumberOfReps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Количество повторений"
+                android:inputType="number"
+                android:textColor="@color/textViewColor"
+                android:textColorHint="@color/editTextColor" />
 
-        <Button
-            android:id="@+id/button_m4c"
-            android:layout_width="50dp"
+            <Button
+                android:id="@+id/button_p1c"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:text="+"
+                android:textSize="@dimen/button_pm_t_size"
+                app:backgroundTint="@color/orange_for_button_inc_dec" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="-"
-            app:backgroundTint="#FF9800" />
+            android:text="Количество потворений"
+            android:textColor="@color/textViewColor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
-        <EditText
-            android:id="@+id/editTextTimeOfRest"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Время, (с)"
-            android:inputType="number" />
+            android:text="Вес снаряда"
+            android:textColor="@color/textViewColor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear2" />
 
-        <Button
-            android:id="@+id/button_p4c"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_weight="0"
-            android:text="+"
-            app:backgroundTint="#FF9800" />
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Количество кругов"
+            android:textColor="@color/textViewColor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear1" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Количество кругов"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear1" />
+        <LinearLayout
+            android:id="@+id/linear4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15">
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Вес снаряда"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear2" />
+            <Button
+                android:id="@+id/button_m4c"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="-"
+                android:textSize="@dimen/button_pm_t_size"
+                app:backgroundTint="@color/orange_for_button_inc_dec" />
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Время отдыха между подходами"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear3" />
+            <EditText
+                android:id="@+id/editTextTimeOfRest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Время, (с)"
+                android:inputType="number"
+                android:textColor="@color/textViewColor"
+                android:textColorHint="@color/editTextColor" />
+
+            <Button
+                android:id="@+id/button_p4c"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:text="+"
+                android:textSize="@dimen/button_pm_t_size"
+                app:backgroundTint="@color/orange_for_button_inc_dec" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+            <Button
+                android:id="@+id/button_m3c"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="-"
+                android:textSize="@dimen/button_pm_t_size"
+                app:backgroundTint="@color/orange_for_button_inc_dec" />
+
+            <EditText
+                android:id="@+id/editTextNumberOfWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Вес снаряда, (кг)"
+                android:inputType="number"
+                android:text="0"
+                android:textColor="@color/textViewColor"
+                android:textColorHint="@color/editTextColor" />
+
+            <Button
+                android:id="@+id/button_p3c"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:text="+"
+                android:textSize="@dimen/button_pm_t_size"
+                app:backgroundTint="@color/orange_for_button_inc_dec" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

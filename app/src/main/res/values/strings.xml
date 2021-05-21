@@ -30,4 +30,6 @@
     <string name="height">Введите рост</string>
     <string name="Result">Результат</string>
     <string name="Count">Рассчитать</string>
+    <string name="lets_train">Тренироваться!</string>
+    <string name="save">Сохранить</string>
 </resources>
