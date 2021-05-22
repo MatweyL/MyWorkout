@@ -2,6 +2,7 @@ package com.example.myworkout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,7 +24,7 @@ public class CountCalory extends AppCompatActivity {
     private TextView textViewRes;
     private RadioButton radioButton, radioButton2;
     private RadioGroup radioGroup;
-    public int age,k,G;
+    public int age,k,G=1;
     public double weight,height,result,A;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +40,17 @@ public class CountCalory extends AppCompatActivity {
         radioButton=findViewById(R.id.radioButtonF);
         radioButton2=findViewById(R.id.radioButtonM);
         radioButton2.setChecked(true);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, activ);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_color, activ);
+        adapter.setDropDownViewResource(R.layout.newcustomspinner);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
 
-
+        int _=radioGroup.getCheckedRadioButtonId();
+        if(findViewById(_)==radioButton){
+            G=2;
+        }
         bRes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +73,7 @@ public class CountCalory extends AppCompatActivity {
                 AdapterView.OnItemSelectedListener itemSelectedListener = new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
                         String item = (String)parent.getItemAtPosition(position);
                         System.out.println(item);
                         k = parent.getSelectedItemPosition();
