@@ -133,7 +133,7 @@ public class CountCalory extends AppCompatActivity {
                     //System.out.println(age);
                     //System.out.println(height);
                     //System.out.println(weight);
-                    Toast.makeText(CountCalory.this,"Female",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(CountCalory.this,"Female",Toast.LENGTH_LONG).show();
                     textViewRes.setText(String.valueOf(Math.ceil(result)));
                 }
                 else if (G==1){
@@ -145,11 +145,11 @@ public class CountCalory extends AppCompatActivity {
                     //System.out.println(weight);
 
 
-                    Toast.makeText(CountCalory.this,"Male",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(CountCalory.this,"Male",Toast.LENGTH_LONG).show();
                     textViewRes.setText(String.valueOf(Math.ceil(result)));
                 }
                 else if (G==0){
-                    Toast.makeText(CountCalory.this,"Выберете пол",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(CountCalory.this,"Выберете пол",Toast.LENGTH_LONG).show();
                 }
             }
         });

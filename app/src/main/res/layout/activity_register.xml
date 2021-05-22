@@ -8,14 +8,14 @@
 
     <TextView
         android:id="@+id/tvTitleRP"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="105dp"
+        android:gravity="center"
         android:text="@string/au_title"
         android:textSize="50sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,7 +60,7 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="@string/au_name"
         android:inputType="textPersonName"
