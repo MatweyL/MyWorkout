@@ -213,8 +213,24 @@ public class TrainActivity extends AppCompatActivity {
                         break;
                     }
                     case 4: {
-                        Intent intent = new Intent(TrainActivity.this, MainActivity.class);
-                        startActivity(intent);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(TrainActivity.this);
+                        builder.setTitle("Поделиться тренировкой в соцсетях?");
+                        builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                shareTrain();
+                            }
+                        });
+                        builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(TrainActivity.this, MainActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                        AlertDialog ad = builder.create();
+                        ad.show();
+
                     }
                     default: {
                         break;
@@ -250,6 +266,31 @@ public class TrainActivity extends AppCompatActivity {
 
         countDownTimer.start();
     }
+
+    public void shareTrain() {
+        Integer trTimeMinutes = Integer.parseInt(train.getTimeOfTraining()) / 60;
+        Integer trTimeSeconds = Integer.parseInt(train.getTimeOfTraining()) % 60;
+        StringBuffer message = new StringBuffer();
+        message.append("Составил крутую тренировку в приложении MyWorkout, оцените)\n");
+        message.append("По времени она занимает около ").append(trTimeMinutes).append(" мин. ").append(trTimeSeconds).append(" сек").append('\n');
+        message.append("Целевые мышцы: ");
+        message.append(train.getTargetMuscles()).append('\n').append("Вот список упражнений:").append('\n');
+        for (Exercise ex: exercises) {
+            message.append(ex.getName()).append(": ").append(ex.getSetsNumber()).append('x').append(ex.getRepsNumber()).append(", ");
+            if (!ex.getTimeExercise().equals("0")) {
+                message.append("вес снаряда - ").append(ex.getTimeExercise()).append(" кг, ");
+            }
+            message.append("отдых между подходами - ").append(ex.getTimeRest()).append(" c;").append('\n');
+        }
+        message.append("Отлично потренировался!");
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        String msg =  message.toString();
+        intent.putExtra(Intent.EXTRA_TEXT, msg);
+        Intent selectIntent = Intent.createChooser(intent, "Как вы хотите поделиться тренировкой&");
+        startActivity(selectIntent);
+    }
+
 
     @Override
     public void onBackPressed(){
