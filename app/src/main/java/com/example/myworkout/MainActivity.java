@@ -118,6 +118,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(MainActivity.this,AuthorizationActivity.class));
+    }
+
+    @Override
     protected void onPause() {
         super.onPause();
     }
