@@ -5,7 +5,7 @@ import android.widget.ImageView;
 public class Food {
     String title, urlFood;
     double protein,fats, carbohydrates,calories;
-    ImageView imageView2;
+
 
     public String getTitle() {
         return title;
@@ -55,11 +55,5 @@ public class Food {
         this.calories = calories;
     }
 
-    public ImageView getImageView2() {
-        return imageView2;
-    }
 
-    public void setImageView2(ImageView imageView2) {
-        this.imageView2 = imageView2;
-    }
 }
