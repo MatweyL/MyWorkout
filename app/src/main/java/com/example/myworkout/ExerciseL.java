@@ -1,12 +1,12 @@
 package com.example.myworkout;
 
-public class Exercise {
+public class ExerciseL {
     private String image,title,description;
 
-    public Exercise() {
+    public ExerciseL() {
     }
 
-    public Exercise(String image, String title, String description) {
+    public ExerciseL(String image, String title, String description) {
         this.image = image;
         this.title = title;
         this.description = description;
