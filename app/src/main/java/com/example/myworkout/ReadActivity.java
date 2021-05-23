@@ -2,7 +2,6 @@ package com.example.myworkout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -28,7 +27,7 @@ public class ReadActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     List<String> title_list, description_list,image_list;
     ArrayAdapter<String>  arrayAdapter;
-    Exercise exercise1;
+    ExerciseL exercise1;
     SearchView searchView1;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,7 +36,7 @@ public class ReadActivity extends AppCompatActivity {
         listView=findViewById(R.id.ListView1);
         searchView1=findViewById(R.id.searchExers);
         databaseReference= FirebaseDatabase.getInstance().getReference("exercises");
-        exercise1 = new Exercise();
+        exercise1 = new ExerciseL();
         title_list = new ArrayList<>();
         image_list = new ArrayList<>();
         description_list = new ArrayList<>();
@@ -47,7 +46,7 @@ public class ReadActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot a:snapshot.getChildren())
                 {
-                    exercise1 = a.getValue(Exercise.class);
+                    exercise1 = a.getValue(ExerciseL.class);
                     title_list.add(exercise1.getTitle());
                     description_list.add(exercise1.getDescription());
                     image_list.add(exercise1.getImage());
