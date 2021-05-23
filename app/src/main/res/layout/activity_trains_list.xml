@@ -22,12 +22,15 @@
 
             <TextView
                 android:id="@+id/textViewTitleOfTrainList"
+                style="@style/appCommonTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
 
+                android:gravity="center"
+                android:padding="6dp"
                 android:text="@string/observe_train_list"
+                android:textAllCaps="true"
                 android:textSize="24sp" />
 
         </TableRow>

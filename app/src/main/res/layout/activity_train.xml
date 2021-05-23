@@ -136,12 +136,15 @@
 
             <TextView
                 android:id="@+id/textViewNameOfTrainTr"
+                style="@style/appCommonTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
 
+                android:gravity="center"
+                android:padding="6dp"
                 android:text="Тренировка"
+                android:textAllCaps="true"
                 android:textSize="24sp" />
 
         </TableRow>
