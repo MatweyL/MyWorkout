@@ -24,6 +24,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <TableLayout
+                    android:id="@+id/aboutCC"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/title_menu_in_train"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textViewAboutCalory"
+                            style="@style/appCommonTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+
+                            android:gravity="center"
+                            android:padding="6dp"
+                            android:text="Подсчет калорий"
+                            android:textAllCaps="true"
+                            android:textSize="24sp" />
+
+                    </TableRow>
+
+                </TableLayout>
+
                 <TextView
                     android:id="@+id/textView3"
                     style="@style/appCommonTextStyle"
@@ -108,11 +138,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginLeft="30dp"
-                    android:layout_marginTop="16dp"
                     android:text="@string/height"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/aboutCC" />
 
                 <TextView
                     android:id="@+id/textView2"

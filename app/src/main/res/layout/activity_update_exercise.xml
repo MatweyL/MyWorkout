@@ -8,6 +8,36 @@
     android:background="@color/main_background1"
     tools:context=".Matvey.myworkoutcreatingtrainsdemo.UpdateExercise">
 
+    <TableLayout
+        android:id="@+id/tlUpEx"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_menu_in_train"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewUpEx"
+                style="@style/appCommonTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="Редактирование"
+                android:textAllCaps="true"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="0dp"
@@ -51,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tlUpEx" />
 
     <TextView
         android:id="@+id/textView11"

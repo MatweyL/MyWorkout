@@ -14,6 +14,36 @@
         android:orientation="vertical"
         android:background="@color/button_yellow_for_stroke">
 
+        <TableLayout
+            android:id="@+id/tlOfDescriptionOfEx"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/title_menu_in_train"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textViewTitleofdesc"
+                    style="@style/appCommonTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:gravity="center"
+                    android:padding="6dp"
+                    android:text="Об упражнении"
+                    android:textAllCaps="true"
+                    android:textSize="24sp" />
+
+            </TableRow>
+
+        </TableLayout>
+
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"

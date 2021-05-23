@@ -99,8 +99,10 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_logout"
             style="@style/menuTextStyle"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/menu_buttons_style"
             android:text="@string/Logout"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_some_b" />

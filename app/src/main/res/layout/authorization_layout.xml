@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/auButton"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/main_background1">
 
     <TextView
         android:id="@+id/tvTitleRP"
@@ -14,6 +15,7 @@
         android:layout_marginLeft="60dp"
         android:layout_marginTop="100dp"
         android:text="@string/au_title"
+        android:textColor="@color/white"
         android:textSize="50sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,13 +52,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AuEditTextLogin" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/RPRegButton"
+        style="@style/menuTextStyle"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
+        android:background="@drawable/button_save_style"
         android:text="@string/au_button"
-        app:backgroundTint="#E18641"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

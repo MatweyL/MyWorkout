@@ -5,8 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background1"
-    android:padding="10dp"
     tools:context=".Matvey.myworkoutcreatingtrainsdemo.Create_Exercise_Activity">
+
+    <TableLayout
+        android:id="@+id/tlcrexex"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_menu_in_train"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewCreatorOfExxxx"
+                style="@style/appCommonTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="Создание упражнения"
+                android:textAllCaps="true"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+    </TableLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/button_save_style"
@@ -28,10 +57,11 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:background="@color/main_background1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/tlcrexex">
 
         <EditText
             android:id="@+id/editTextName"

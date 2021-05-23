@@ -8,6 +8,36 @@
     tools:context=".FoodActivity"
     android:orientation="vertical">
 
+    <TableLayout
+        android:id="@+id/tlCalloryFood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_menu_in_train"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewTitleOfCalloryFood"
+                style="@style/appCommonTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="Калорийность продуктов"
+                android:textAllCaps="true"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
     <SearchView
         android:id="@+id/searchFood"
         android:layout_width="match_parent"
