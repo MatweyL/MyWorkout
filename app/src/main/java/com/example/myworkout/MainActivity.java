@@ -1,9 +1,11 @@
 package com.example.myworkout;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myworkout.Matvey.myworkoutcreatingtrainsdemo.Create_Train_Activity;
+import com.example.myworkout.Matvey.myworkoutcreatingtrainsdemo.TrainActivity;
 import com.example.myworkout.Matvey.myworkoutcreatingtrainsdemo.TrainsListActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -87,9 +90,7 @@ public class MainActivity extends AppCompatActivity {
         bLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(MainActivity.this,AuthorizationActivity.class));
-
+                goToAuth();
             }
         });
 
@@ -115,6 +116,32 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"We work on this",Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void goToAuth() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Вы уверены, что хотите выйти?");
+        builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this,AuthorizationActivity.class));
+            }
+        });
+        builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        AlertDialog ad = builder.create();
+        ad.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        goToAuth();
     }
 
     @Override
