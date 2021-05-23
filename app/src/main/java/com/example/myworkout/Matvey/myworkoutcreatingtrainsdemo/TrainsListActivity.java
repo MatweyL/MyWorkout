@@ -23,7 +23,6 @@ public class TrainsListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<Train> trains;
     private boolean training;
-    private ImageButton button_to_menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +34,6 @@ public class TrainsListActivity extends AppCompatActivity {
         training = getIntent().getExtras().getBoolean("training", false);
         TrainAdapter adapter = new TrainAdapter(this, trains, training);
         recyclerView.setAdapter(adapter);
-        button_to_menu = findViewById(R.id.button_back_to_main_menuM);
-        button_to_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TrainsListActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void prepareData() {

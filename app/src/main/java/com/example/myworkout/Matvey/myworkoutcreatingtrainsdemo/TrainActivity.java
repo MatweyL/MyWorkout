@@ -30,7 +30,6 @@ public class TrainActivity extends AppCompatActivity {
     private TableLayout tlSetNum, tlAboutEx;
     private ConstraintLayout clStateTimer;
     private Button cmd;
-    private ImageButton btn_back;
     private Train train;
     private List<Exercise> exercises;
     private  Exercise tempExercise;
@@ -64,7 +63,6 @@ public class TrainActivity extends AppCompatActivity {
         tvNameOfExercise = findViewById(R.id.textViewExerciseNameTr);
         tvNameOfTrain = findViewById(R.id.textViewNameOfTrainTr);
         cmd = findViewById(R.id.buttonCommand);
-        btn_back = findViewById(R.id.button_back_to_train_list);
         tvStateExercise = findViewById(R.id.textViewStateExercise);
         tvTimer = findViewById(R.id.timer);
         tvCurrentEx = findViewById(R.id.tvCurrentExercise);
@@ -105,12 +103,7 @@ public class TrainActivity extends AppCompatActivity {
     private void startTrain(){
         tvNameOfExercise.setText(train.getName());
         cmd.setText("Начать тренировку!");
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                endOfTrain();
-            }
-        });
+
         cmdAction();
     }
 

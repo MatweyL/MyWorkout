@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbarSize="4dp"
+    android:background="@color/main_background1"
     android:orientation="vertical">
     <SearchView
         android:id="@+id/searchExers"
@@ -12,7 +13,6 @@
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
         android:paddingRight="5dp"
-        android:background="@drawable/menu_background_gradient"
         android:paddingBottom="5dp"></SearchView>
     <ListView
         android:id="@+id/ListView1"

@@ -14,6 +14,7 @@
     android:layout_margin="4dp">
 
     <TextView
+        style="@style/appCommonSmallTextStyle"
         android:id="@+id/exerciseName2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -24,6 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        style="@style/appCommonSmallTextStyle"
         android:id="@+id/numberOfSets2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,6 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exerciseName2" />
 
     <TextView
+        style="@style/appCommonSmallTextStyle"
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,6 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exerciseName2" />
 
     <TextView
+        style="@style/appCommonSmallTextStyle"
         android:id="@+id/numberOfReps2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,6 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exerciseName2" />
 
     <TextView
+        style="@style/appCommonSmallTextStyle"
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,6 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exerciseName2" />
 
     <TextView
+        style="@style/appCommonSmallTextStyle"
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,6 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exerciseName2" />
 
     <TextView
+        style="@style/appCommonSmallTextStyle"
         android:id="@+id/weightOfExercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,6 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exerciseName2" />
 
     <TextView
+        style="@style/appCommonSmallTextStyle"
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -90,6 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exerciseName2" />
 
     <TextView
+        style="@style/appCommonSmallTextStyle"
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,6 +109,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exerciseName2" />
 
     <TextView
+        style="@style/appCommonSmallTextStyle"
         android:id="@+id/timeOfRest2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,6 +120,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exerciseName2" />
 
     <TextView
+        style="@style/appCommonSmallTextStyle"
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

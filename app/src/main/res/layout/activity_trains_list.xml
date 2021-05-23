@@ -20,13 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageButton
-                android:id="@+id/button_back_to_main_menuM"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/title_menu_in_train_button"
-                app:srcCompat="@drawable/abc_vector_test" />
-
             <TextView
                 android:id="@+id/textViewTitleOfTrainList"
                 android:layout_width="match_parent"

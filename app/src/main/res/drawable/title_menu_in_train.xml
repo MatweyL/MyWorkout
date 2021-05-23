@@ -3,7 +3,5 @@
     <corners android:bottomLeftRadius="5dp"
         android:bottomRightRadius="5dp"/>
     <stroke android:color="@color/black" android:width="1dp"/>
-    <gradient android:type="linear"
-        android:startColor="@color/light_orange"
-        android:endColor="@color/dark_orange"/>
+    <solid android:color="@color/dark_orange"/>
 </shape>

@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:background="@drawable/circle_layout_train"
-    android:layout_marginTop="10dp"
     android:layout_marginLeft="1dp"
-    android:layout_marginRight="1dp">
+    android:layout_marginTop="15dp"
+    android:layout_marginRight="1dp"
+    android:background="@drawable/circle_layout_train"
+    android:orientation="horizontal">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="0dp"
-        android:padding="10dp">
+        android:layout_margin="0dp">
 
         <TextView
             android:id="@+id/textViewName1"
+            style="@style/appCommonSmallTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Тренировка 1"
@@ -29,6 +28,7 @@
 
         <TextView
             android:id="@+id/textView41"
+            style="@style/appCommonSmallTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Целевые мышцы:"
@@ -39,6 +39,7 @@
 
         <TextView
             android:id="@+id/textViewTargetMuscles1"
+            style="@style/appCommonSmallTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Абдоминальные мышцы живота, косые мышцы живота"
@@ -49,6 +50,7 @@
 
         <TextView
             android:id="@+id/textView71"
+            style="@style/appCommonSmallTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Суммарное время тренировки:"
@@ -59,6 +61,7 @@
 
         <TextView
             android:id="@+id/textViewTimeOfTraining1"
+            style="@style/appCommonSmallTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="30"
@@ -70,6 +73,7 @@
 
         <TextView
             android:id="@+id/textView91"
+            style="@style/appCommonSmallTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
@@ -81,6 +85,7 @@
 
         <TextView
             android:id="@+id/textViewTimeOfTrainingSeconds1"
+            style="@style/appCommonSmallTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
@@ -92,6 +97,7 @@
 
         <TextView
             android:id="@+id/textView7"
+            style="@style/appCommonSmallTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
