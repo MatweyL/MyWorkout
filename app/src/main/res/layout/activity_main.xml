@@ -2,110 +2,129 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_background1"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewGreeting"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
-        android:gravity="center"
-        android:hint=""
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_train"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="tiger"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_train"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_show_exercises_list"
+            style="@style/menuTextStyle"
+            android:background="@drawable/menu_buttons_style"
+            android:text="@string/Exercises_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_create_train" />
 
-        style="@style/menuTextStyle"
-        android:background="@drawable/menu_buttons_style"
-        android:text="@string/lets_train"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        <TextView
+            android:id="@+id/textViewGreeting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="52dp"
+            android:gravity="center"
+            android:hint=""
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/button_train"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_trains_list"
-        style="@style/menuTextStyle"
-        android:background="@drawable/menu_buttons_style"
-        android:text="@string/Trains_list"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_train" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="tiger"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_create_train"
-        style="@style/menuTextStyle"
-        android:background="@drawable/menu_buttons_style"
-        android:text="@string/Create_Train"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_trains_list" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_trains_list"
+            style="@style/menuTextStyle"
+            android:background="@drawable/menu_buttons_style"
+            android:text="@string/Trains_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_train" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_show_exercises_list"
-        style="@style/menuTextStyle"
-        android:background="@drawable/menu_buttons_style"
-        android:text="@string/Exercises_list"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_create_train" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_train"
+
+            style="@style/menuTextStyle"
+            android:background="@drawable/menu_buttons_style"
+            android:text="@string/lets_train"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_create_train"
+            style="@style/menuTextStyle"
+            android:background="@drawable/menu_buttons_style"
+            android:text="@string/Create_Train"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_trains_list" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_logout"
+            style="@style/menuTextStyle"
+            android:background="@drawable/menu_buttons_style"
+            android:text="@string/Logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_some_b" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_some_b"
+            style="@style/menuTextStyle"
+            android:background="@drawable/menu_buttons_style"
+            android:text="@string/Eat_Button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_calory" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_calory"
+            style="@style/menuTextStyle"
+            android:background="@drawable/menu_buttons_style"
+            android:text="@string/Count_calory"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_show_exercises_list" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_calory"
-        style="@style/menuTextStyle"
-        android:background="@drawable/menu_buttons_style"
-        android:text="@string/Count_calory"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_show_exercises_list" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_some_b"
-        style="@style/menuTextStyle"
-        android:background="@drawable/menu_buttons_style"
-        android:text="@string/Eat_Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_calory" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_logout"
-        style="@style/menuTextStyle"
-        android:background="@drawable/menu_buttons_style"
-        android:text="@string/Logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_some_b" />
-
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

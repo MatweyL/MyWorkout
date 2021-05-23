@@ -47,10 +47,6 @@ public class CountCalory extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
 
-        int _=radioGroup.getCheckedRadioButtonId();
-        if(findViewById(_)==radioButton){
-            G=2;
-        }
         bRes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
