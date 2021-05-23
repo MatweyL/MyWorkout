@@ -26,7 +26,7 @@ public class AuthorizationActivity extends AppCompatActivity implements View.OnC
     private Button buttonSigIn;
     private FirebaseAuth firebaseAuth;
     //private ProgressBar progressBar;
-
+    //
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
